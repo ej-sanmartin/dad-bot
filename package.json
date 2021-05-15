@@ -1,0 +1,21 @@
+{
+  "name": "dadbot",
+  "version": "1.0.0",
+  "description": "A Bot that texts me dad jokes every morning to start my day off right",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dad",
+    "bot",
+    "twilio",
+    "api",
+    "text"
+  ],
+  "author": "Edgar Jr San Martin",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^9.0.2"
+  }
+}
