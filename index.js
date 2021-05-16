@@ -47,7 +47,7 @@ const task = new AsyncTask(
 const job = new SimpleIntervalJob({ days: 1 }, task)
 
 // Starts this program at 7am. Then toad-scheduler will re-run the text program every day
-const startJob = schedule.scheduleJob('* * 7 * * *', function(){
+const startJob = schedule.scheduleJob('* 15 13 * * *', function(){
     let day = new Date();
     let time = day.getHours();
     console.log(`This job has started at ${time}`);
