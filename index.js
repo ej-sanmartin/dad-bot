@@ -27,18 +27,23 @@ const task = new AsyncTask(
     async () => {
         try {
             let dadJoke = {};
-            dadJoke = await getDadJoke(dadJoke);
-            let textContent = setupTextContent(dadJoke);
-            let text = setupTextDetail(textContent);
-            client.messages.create(text);
-        } catch(err) {
-            console.error(`Error ocurred while sending the text message: ${err}`);
+            getDadJoke(function(error, res){
+                if(error != null){
+                    console.error(`Error setting dadJokeObject: \t ${error}`)
+                } else {
+                    dadJoke.setup = res.setup;
+                    dadJoke.punchline = res.punchline;
+                    let textContent = setupTextContent(dadJoke);
+                    let text = setupTextDetail(textContent);
+                    client.messages.create(text);
+                }
+            });
+        } catch(err){
+            console.error(`Error ocurred trying to text you: ${err}`);
         }
     },
     (err) => { console.error(`Error ocurred running this daily task: ${err}`); }
 );
 const job = new SimpleIntervalJob({ days: 1 }, task)
 
-scheduler.addSimpleIntervalJob(job);
-
-// const startJob = schedule.scheduleJob('* * 7 * * *', scheduler.addSimpleIntervalJob(job));
+const startJob = schedule.scheduleJob('* * 7 * * *', scheduler.addSimpleIntervalJob(job));

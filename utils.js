@@ -12,7 +12,7 @@ ${jokeObject.punchline}
 }
 
 function setupTextDetail(textContent){
-    if(jokeObject == null) throw new Error('Null or no object passed into setupTextDetail function.');
+    if(textContent == null) throw new Error('Null or no object passed into setupTextDetail function.');
 
     let textObject = {
         body: textContent,
@@ -22,25 +22,22 @@ function setupTextDetail(textContent){
     return textObject;
 }
 
-function getDadJoke(jokeObject){
-    if(jokeObject == null) throw new Error('Null or no object passed into getDadJoke function.');
-
-    var req = unirest("GET", "https://dad-jokes.p.rapidapi.com/random/joke");
-
-    req.headers({
+async function getDadJoke(callback){
+    unirest("GET", "https://dad-jokes.p.rapidapi.com/random/joke")
+    .headers({
         "x-rapidapi-key": process.env.RAPID_API_KEY,
         "x-rapidapi-host": "dad-jokes.p.rapidapi.com",
         "useQueryString": true
+    })
+    .end(function (res){
+        if (res.error){
+            console.error(`Error getting joke: ${res.error}`);
+            callback(res.error, null);
+        } else {
+            console.log("Fetching joke successful");
+            callback(null, res.body.body[0]);
+        }
     });
-
-    req.end(function (res) {
-        if (res.error) throw new Error(res.error);
-
-        jokeObject.setup = res.body[0].setup;
-        jokeObject.punchline = res.body[0].punchline;
-    });
-
-    return jokeObject;
 }
 
 module.exports = {
