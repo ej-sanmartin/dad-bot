@@ -46,4 +46,6 @@ const task = new AsyncTask(
 );
 const job = new SimpleIntervalJob({ days: 1 }, task)
 
-const startJob = schedule.scheduleJob('* * 7 * * *', scheduler.addSimpleIntervalJob(job));
+const startJob = schedule.scheduleJob('* * 7 * * *', function(){
+    scheduler.addSimpleIntervalJob(job);
+});
