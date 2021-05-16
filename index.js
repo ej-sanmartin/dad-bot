@@ -2,7 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const twilio = require('twilio');
 const { ToadScheduler, SimpleIntervalJob, AsyncTask } = require('toad-scheduler');
-const schedule = require('node-schedule');
+const cron = require('cron');
 const { setupTextContent,
         setupTextDetail,
         getDadJokeAsync } = require('./utils.js');
@@ -47,10 +47,12 @@ const task = new AsyncTask(
 const job = new SimpleIntervalJob({ days: 1 }, task)
 
 // Starts this program at 7am. Then toad-scheduler will re-run the text program every day
-const startJob = schedule.scheduleJob('* 15 13 * * *', function(){
+let CronJob = cron.CronJob;
+let startJob = new CronJob('13 30 * * * *', function(){
     let day = new Date();
     let time = day.getHours();
     console.log(`This job has started at ${time}`);
     scheduler.addSimpleIntervalJob(job);
-});
+}, null, true);
+startJob.start();
  
