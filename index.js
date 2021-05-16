@@ -44,14 +44,12 @@ const task = new AsyncTask(
     },
     (err) => { console.error(`Error ocurred running this daily task: ${err}`); }
 );
-const job = new SimpleIntervalJob({ days: 1 }, task)
+const job = new SimpleIntervalJob({ seconds: 10 }, task)
 
 // Starts this program at 7am. Then toad-scheduler will re-run the text program every day
 let CronJob = cron.CronJob;
-let startJob = new CronJob('13 30 * * * *', function(){
-    let day = new Date();
-    let time = day.getHours();
-    console.log(`This job has started at ${time}`);
+let startJob = new CronJob('14 10 * * *', function(){
+    console.log('Cron Job starting');
     scheduler.addSimpleIntervalJob(job);
 }, null, true);
 startJob.start();
