@@ -21,7 +21,7 @@ const client = twilio(accountSid, authToken);
 
 // Starts this program at 7am. Then toad-scheduler will re-run the text program every day
 let CronJob = cron.CronJob;
-let job = new CronJob('20 15 * * *', async function(){
+let job = new CronJob('0 7 * * 0-6', async function(){
     console.log('Cron Job starting');
     try {
         let dadJoke = {};
@@ -41,5 +41,3 @@ let job = new CronJob('20 15 * * *', async function(){
     }
 }, null, true, 'America/New_York');
 job.start();
- 
-//'0 7 * * 0-6'
