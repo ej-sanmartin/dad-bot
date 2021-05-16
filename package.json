@@ -21,7 +21,6 @@
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "newrelic": "^7.4.0",
-    "toad-scheduler": "^1.0.2",
     "twilio": "^3.62.0",
     "unirest": "^0.6.0"
   }
