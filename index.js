@@ -48,9 +48,9 @@ const job = new SimpleIntervalJob({ seconds: 10 }, task)
 
 // Starts this program at 7am. Then toad-scheduler will re-run the text program every day
 let CronJob = cron.CronJob;
-let startJob = new CronJob('* 51 14 * * *', function(){
+let startJob = new CronJob('* 55 14 * * *', function(){
     console.log('Cron Job starting');
     scheduler.addSimpleIntervalJob(job);
-}, null, true);
+}, null, true, 'America/New York');
 startJob.start();
  
