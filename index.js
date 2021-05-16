@@ -5,7 +5,7 @@ const { ToadScheduler, SimpleIntervalJob, AsyncTask } = require('toad-scheduler'
 const schedule = require('node-schedule');
 const { setupTextContent,
         setupTextDetail,
-        getDadJoke } = require('./utils.js');
+        getDadJokeAsync } = require('./utils.js');
 
 // init express
 const app = express();
@@ -27,7 +27,7 @@ const task = new AsyncTask(
     async () => {
         try {
             let dadJoke = {};
-            getDadJoke(function(error, res){
+            getDadJokeAsync(function(error, res){
                 if(error != null){
                     console.error(`Error setting dadJokeObject: \t ${error}`)
                 } else {
@@ -49,3 +49,4 @@ const job = new SimpleIntervalJob({ days: 1 }, task)
 const startJob = schedule.scheduleJob('* * 7 * * *', function(){
     scheduler.addSimpleIntervalJob(job);
 });
+ 

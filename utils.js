@@ -22,7 +22,7 @@ function setupTextDetail(textContent){
     return textObject;
 }
 
-async function getDadJoke(callback){
+async function getDadJokeAsync(callback){
     unirest("GET", "https://dad-jokes.p.rapidapi.com/random/joke")
     .headers({
         "x-rapidapi-key": process.env.RAPID_API_KEY,
@@ -43,5 +43,5 @@ async function getDadJoke(callback){
 module.exports = {
     setupTextContent: setupTextContent,
     setupTextDetail: setupTextDetail,
-    getDadJoke: getDadJoke
+    getDadJokeAsync: getDadJokeAsync
 }
