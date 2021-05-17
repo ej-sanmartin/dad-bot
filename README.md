@@ -16,13 +16,13 @@ Why not start the day off with a laugh, ya know?
 
 ## Prerequisites
 
-Will need to set up a Twilio account to get:
+Will need to set up a Twilio account to get the environment variables:
 
     - TWILIO_ACCOUNT_SID
     - TWILIO_AUTH_TOKEN
     - TWILIO_PHONE_NUMBER
 
-Will need to set up a RapidAPI account to get:
+Will need to set up a RapidAPI account to get the environment variables:
 
     - RAPID_API_KEY
 
