@@ -1,6 +1,7 @@
 # Dad Bot
-
-![Dad Bot Logo](https://raw.githubusercontent.com/ej-sanmartin/dad-bot/main/assets/dad-bot-banner_transparent.png "Dad Bot Logo")
+<p align="center">
+<img src="https://raw.githubusercontent.com/ej-sanmartin/dad-bot/main/assets/dad-bot-banner_transparent.png")
+</p>
 
 
 ## Description
