@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* lol Roboto font for Dad BOT's site... I need sleep rofl */
+    height: 100vh;
+    overflow: hidden;
+}
+
+.mysterious_input {
+    height: 15vh;
+    width: 30vw;
+    font-size: 3em;
+    padding: .5em 1em;
+    border-radius: 15px;
+    border-color: white;
+}
+
+.mysterious_input:focus {
+    outline: none;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.dad-bot-content {
+
+}
+
+.dad-bot-logo {
+
+}
+
+footer {
+
+}
