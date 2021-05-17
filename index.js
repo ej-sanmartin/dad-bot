@@ -19,15 +19,23 @@ let accountSid = process.env.TWILIO_ACCOUNT_SID; // Your Account SID from www.tw
 let authToken = process.env.TWILIO_AUTH_TOKEN;   // Your Auth Token from www.twilio.com/console
 const client = twilio(accountSid, authToken);
 
+/*
+    set cron time right below, default is every day at 7:00am
+    Reminder for how it is formatted
+       *      *            *              *          *
+    minute  hour    day of the month    month   day of the week
+*/
+let cronScheduleExpression = '0 7 * * 0-6';
+
 // Starts this program at 7am. Then toad-scheduler will re-run the text program every day
 let CronJob = cron.CronJob;
-let job = new CronJob('0 7 * * 0-6', async function(){
+let job = new CronJob(cronScheduleExpression, async function(){
     console.log('Cron Job starting');
     try {
         let dadJoke = {};
         getDadJokeAsync(function(error, res){
             if(error != null){
-                console.error(`Error setting dadJokeObject: \t ${error}`)
+                console.error(`Error setting dadJokeObject: \t ${error}`);
             } else {
                 dadJoke.setup = res.setup;
                 dadJoke.punchline = res.punchline;
