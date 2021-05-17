@@ -23,14 +23,29 @@ html, body {
 }
 
 .container {
+    margin: 0 auto;
     height: 100vh;
+    max-width: 80vw;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+}
+
+.joke-name {
+    text-align: center;
+}
+
+.footer-container {
+    width: 80vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .dad-bot-content {
-
+    padding-top: 8em;
+    flex: 1;
 }
 
 .dad-bot-logo {
@@ -38,5 +53,5 @@ html, body {
 }
 
 footer {
-
+    padding: 2em;
 }

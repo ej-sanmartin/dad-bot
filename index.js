@@ -11,7 +11,7 @@ const { setupTextContent,
 const app = express();
 app.use(express.json());
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
-app.use('/images', express.static(path.join(__dirname), 'public/images'));
+app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.set('view engine', 'ejs');
 
 // start the server listening for requests, using deployment option's port or locally
