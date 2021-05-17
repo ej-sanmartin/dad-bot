@@ -11,6 +11,7 @@ const { setupTextContent,
 const app = express();
 app.use(express.json());
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.use('/images', express.static(path.join(__dirname), 'public/images'));
 app.set('view engine', 'ejs');
 
 // start the server listening for requests, using deployment option's port or locally
@@ -20,6 +21,10 @@ app.listen(port, () => console.log("Server is running..."));
 // displays something interesting for the heroku page
 app.get('/', (req, res) => {
     res.render('index');
+});
+
+app.get('/punchline', (req, res) => {
+    res.render('punchline');
 });
 
 // init Twilio
