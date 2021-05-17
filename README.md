@@ -64,6 +64,8 @@ If you want to test on your machine before deploying, be sure to set the cron ex
 - Twilio
 - Unirest
 - Cron
+- EJS
+- Jest
 
 
 ## Deployment Notes
