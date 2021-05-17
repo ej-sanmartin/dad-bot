@@ -68,7 +68,7 @@ If you want to test on your machine before deploying, be sure to set the cron ex
 
 ## Deployment Notes
 
-[Twilio](https://wwww.twilio.com/docs/labs/serverless-toolkit/deploying "Twilio Serverless Toolkit Deployment") has its own deployment procedures if you would like to deploy on their platform. I had chosen Heroku as I have been a longtime user of their services and deployment is straightforward.
+[Twilio](https://wwww.twilio.com/docs/labs/serverless-toolkit/deploying "Twilio Serverless Toolkit Deployment") has its own deployment procedures if you would like to deploy on their platform. I chose Heroku as I have been a longtime user of their services and deployment is straightforward.
 
 Keep in mind that Heroku puts your application to sleep if it has not been accessed after 1 hour, which may cause some problems when running this application - mainly that Dad will sleep in and miss sending you a text. To fix this, I used [Heroku Kaffeine](http://kaffeine.herokuapp.com "Heroku Kaffeine") to give Dad Bot that extra boost to wake him up every hour.
 
