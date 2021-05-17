@@ -17,7 +17,7 @@ app.set('view engine', 'ejs');
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log("Server is running..."));
 
-// displays something for the heroku page
+// displays something interesting for the heroku page
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -29,7 +29,7 @@ const client = twilio(accountSid, authToken);
 
 /*
     set cron time right below, default is every day at 7:00am
-    Reminder for how it is formatted
+    Reminder for how it is formatted:
        *      *            *              *          *
     minute  hour    day of the month    month   day of the week
 */
