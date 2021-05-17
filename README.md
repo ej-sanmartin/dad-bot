@@ -3,6 +3,11 @@
 <img src="https://raw.githubusercontent.com/ej-sanmartin/dad-bot/main/assets/dad-bot-banner_transparent.png")
 </p>
 
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
+[![Open Source Love png1](https://badges.frapsoft.com/os/v1/open-source.png?v=103)](https://github.com/ellerbrock/open-source-badges/)
+[![ForTheBadge built-with-love](http://ForTheBadge.com/images/badges/built-with-love.svg)](https://GitHub.com/Naereen/)
+![Made with JavaScript](https://img.shields.io/badge/Made%20with-JavaScript-blueviolet)
 
 ## Description
 
