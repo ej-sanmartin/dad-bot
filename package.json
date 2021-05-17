@@ -19,6 +19,7 @@
   "dependencies": {
     "cron": "^1.8.2",
     "dotenv": "^9.0.2",
+    "ejs": "^3.1.6",
     "express": "^4.17.1",
     "twilio": "^3.62.0",
     "unirest": "^0.6.0"

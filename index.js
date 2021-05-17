@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const twilio = require('twilio');
 const cron = require('cron');
+const path = require('path');
 const { setupTextContent,
         setupTextDetail,
         getDadJokeAsync } = require('./utils.js');
@@ -9,10 +10,17 @@ const { setupTextContent,
 // init express
 const app = express();
 app.use(express.json());
+app.use('/css', express.static(path.join(__dirname, 'public/css')));
+app.set('view engine', 'ejs');
 
 // start the server listening for requests, using deployment option's port or locally
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log("Server is running..."));
+
+// displays something for the heroku page
+app.get('/', (req, res) => {
+    res.render('index');
+});
 
 // init Twilio
 let accountSid = process.env.TWILIO_ACCOUNT_SID; // Your Account SID from www.twilio.com/console
