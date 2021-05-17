@@ -36,7 +36,7 @@ You will need to create a folder in your local computer to place this repo and f
     - RAPID_API_KEY=[your rapid api key here]
     - TWILIO_ACCOUNT_SID=[your twilio account SID here]
     - TWILIO_AUTH_TOKEN=[your twilio auth token here]
-    - PHONE_NUMBER=[your phone number here]
+    - PHONE_NUMBER=[your phone number here with country code 'ex: +18005555555']
     - TWILIO_PHONE_NUMBER=[your twilio phone number here]
 
 
