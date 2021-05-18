@@ -1,10 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
 @media only screen
-    and (max-device-width: 815px){
-    
-    footer {
-        flex-direction: row;
+    and (max-device-width: 400px)
+    and (orientation: portrait){
+
+    .footer-container {
+        margin-top: 2.5em;
+        flex-direction: column;
+    }
+
+    .mysterious_input {
+        max-height: 6vh;
+        min-width: 45vw;
+        font-size: 2em;
+    }
+
+    .dad-bot-logo {
+        min-width: 100vw;
+        margin-bottom: 1em;
     }
 }
 
@@ -15,6 +28,19 @@ html, body {
     font-family: 'Roboto', sans-serif; /* lol Roboto font for Dad BOT's site... I need sleep rofl */
     color: rgba(0, 0, 0, .6);
     height: 100vh;
+    overflow-x: hidden;
+}
+
+::-moz-selection {
+    background-color: grey !important;
+}
+
+::-webkit-selection {
+    background-color: grey !important;
+}
+
+::selection {
+    background-color: grey !important;
 }
 
 .mysterious_input {
@@ -30,14 +56,23 @@ html, body {
     outline: none;
 }
 
+input[type="text"]{
+    color: rgba(0, 0, 0, .6);
+}
+
 .container {
     margin: 0 auto;
-    height: 100vh;
+    min-height: 100vh;
     max-width: 80vw;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    animation-name: fade-in-from-above;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
 }
 
 .joke-name {
@@ -62,11 +97,22 @@ html, body {
 }
 
 .dad-bot-logo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
     max-width: 100vw;
 }
 
 footer {
     padding: 1em;
+    opacity: 0;
+    animation-name: fade-in-from-above;
+    animation-delay: 1500ms;
+    animation-duration: 700ms;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-out;
 }
 
 footer a {
@@ -76,4 +122,16 @@ footer a {
 
 footer a:hover {
     opacity: .5;
+}
+
+@keyframes fade-in-from-above {
+    0% {
+        opacity: 0;
+        margin-top: -30%
+    }
+
+    100% {
+        opacity: .9;
+        margin-top: 0;
+    }
 }
