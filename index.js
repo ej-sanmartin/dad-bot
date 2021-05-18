@@ -33,7 +33,7 @@ app.get('/punchline', (req, res) => {
     res.render('punchline', { data: context });
 });
 
-//saves input into a cookie
+//saves sanitized input into a cookie
 app.post('/punchline-send', (req, res) => {
     let name = req.bodyString('name');
     res.cookie('name', name, { httpOnly: true });

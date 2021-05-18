@@ -53,7 +53,7 @@ After that is done, run these lines to test this application on your local machi
 
 `cd dad-bot`
 
-`npm run start`
+`npm run develop`
 
 If you want to test on your machine before deploying, be sure to set the cron expression to a time that is relatively close to whenever you are running this bot.
 
