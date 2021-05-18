@@ -7,6 +7,7 @@
     .footer-container {
         margin-top: 2.5em;
         flex-direction: column;
+        margin-bottom: 4em;
     }
 
     .mysterious_input {
@@ -16,7 +17,7 @@
     }
 
     .dad-bot-content {
-        padding-top: 8em;
+        padding-top: 2em;
     }
 
     .dad-bot-logo {
