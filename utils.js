@@ -3,7 +3,7 @@ const unirest = require('unirest');
 function setupTextContent(jokeObject){
     if(jokeObject == null) throw new Error('Null or no object passed into setupTextContent function.');
 
-    let textContent =`
+    let textContent =`Hey, it's Dad-Bot.\n
 Wanna hear a joke? :D\n\n
 ${jokeObject.setup}\n\n
 ${jokeObject.punchline}

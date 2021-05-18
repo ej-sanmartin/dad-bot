@@ -1,31 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap');
 
-@media only screen
-    and (max-device-width: 400px)
-    and (orientation: portrait){
-
-    .footer-container {
-        margin-top: 2.5em;
-        flex-direction: column;
-        margin-bottom: 4em;
-    }
-
-    .mysterious_input {
-        max-height: 6vh;
-        min-width: 45vw;
-        font-size: 2em;
-    }
-
-    .dad-bot-content {
-        padding-top: 2em;
-    }
-
-    .dad-bot-logo {
-        min-width: 100vw;
-        margin-bottom: 1em;
-    }
-}
-
 html, body {
     box-sizing: border-box;
     margin: 0;
@@ -138,5 +112,31 @@ footer a:hover {
     100% {
         opacity: .9;
         margin-top: 0;
+    }
+}
+
+@media only screen
+    and (max-device-width: 400px)
+    and (orientation: portrait){
+
+    .footer-container {
+        margin-top: 2.5em;
+        flex-direction: column;
+        margin-bottom: 3em;
+    }
+
+    .mysterious_input {
+        max-height: 6vh;
+        min-width: 45vw;
+        font-size: 2em;
+    }
+
+    .dad-bot-content {
+        padding-top: 2em;
+    }
+
+    .dad-bot-logo {
+        min-width: 100vw;
+        margin-bottom: 1em;
     }
 }
