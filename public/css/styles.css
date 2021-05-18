@@ -15,6 +15,10 @@
         font-size: 2em;
     }
 
+    .dad-bot-content {
+        padding-top: 8em;
+    }
+
     .dad-bot-logo {
         min-width: 100vw;
         margin-bottom: 1em;
@@ -92,7 +96,7 @@ input[type="text"]{
 }
 
 .dad-bot-content {
-    padding-top: 8em;
+    padding-top: 12em;
     flex: 1;
 }
 
