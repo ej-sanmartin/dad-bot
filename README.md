@@ -66,6 +66,8 @@ If you want to test on your machine before deploying, be sure to set the cron ex
 - Cron
 - EJS
 - Jest
+- Node-Sanitize
+- Cookie-Parser
 
 
 ## Deployment Notes

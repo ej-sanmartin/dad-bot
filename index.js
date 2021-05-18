@@ -3,6 +3,7 @@ const express = require('express');
 const twilio = require('twilio');
 const cron = require('cron');
 const cookieParser = require('cookie-parser');
+const sanitizer = require('sanitize')();
 const path = require('path');
 const { setupTextContent,
         setupTextDetail,
@@ -35,7 +36,8 @@ app.get('/punchline', (req, res) => {
 
 //saves input into a cookie
 app.post('/punchline-send', (req, res) => {
-    res.cookie('name', req.body.name, { httpOnly: true });
+    let name = sanitizer.value(req.body.name, 'string');
+    res.cookie('name', name, { httpOnly: true });
     res.redirect('/punchline');
 });
 
