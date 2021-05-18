@@ -3,11 +3,11 @@
 <div class="container">
     <div class="dad-bot-content">
         <img class="dad-bot-logo" src="images/dad-bot-banner-transparent.png" alt="Dad Bot Logo" />
-        <p class="joke-name">Hey boy, I'm Dad</p>
+        <p class="joke-name">Hey <%= (typeof data != "undefined" ? data.name : "boy") %>, I'm Dad</p>
     </div>
     <footer class="footer-container">
         <p>© Edgar Jr San Martin 2021</p>
-        <a href="https://github.com/ej-sanmartin/dad-bot" target="_blank">Github</a>
+        <a href="https://github.com/ej-sanmartin/dad-bot" target="_blank">Get Your Own Dad Bot</a>
     </footer>
 </div>
 

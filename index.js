@@ -2,14 +2,17 @@ require('dotenv').config();
 const express = require('express');
 const twilio = require('twilio');
 const cron = require('cron');
+const cookieParser = require('cookie-parser');
 const path = require('path');
 const { setupTextContent,
         setupTextDetail,
         getDadJokeAsync } = require('./utils.js');
 
-// init express
+// init express and set up static folders, template engine
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
 app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/images', express.static(path.join(__dirname, 'public/images')));
 app.set('view engine', 'ejs');
@@ -20,11 +23,20 @@ app.listen(port, () => console.log("Server is running..."));
 
 // displays something interesting for the heroku page
 app.get('/', (req, res) => {
+    console.log(req.cookies);
+    res.clearCookie('name', { path: '/' }, { httpOnly: true });
     res.render('index');
 });
 
 app.get('/punchline', (req, res) => {
-    res.render('punchline');
+    let context = { name: req.cookies.name };
+    res.render('punchline', { data: context });
+});
+
+//saves input into a cookie
+app.post('/punchline-send', (req, res) => {
+    res.cookie('name', req.body.name, { httpOnly: true });
+    res.redirect('/punchline');
 });
 
 // init Twilio
