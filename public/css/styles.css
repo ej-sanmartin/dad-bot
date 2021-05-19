@@ -8,6 +8,12 @@ html, body {
     color: rgba(0, 0, 0, .6);
     height: 100vh;
     overflow-x: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 ::-moz-selection {
